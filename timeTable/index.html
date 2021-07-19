@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            background-color: #E4E9FD;
+            background-image: -webkit-linear-gradient(70deg, #98c7b1 50%, #E4E9FD 50%);
+            min-height: 100%;
+        }
+
+        body {
+            font: 3ch droid sans mono, consolas, monospace;
+            text-align: center;
+        }
+
+        .heading {
+            margin: 2em auto;
+            color: #0F044C;
+            display: block;
+            text-align: center;
+        }
+
+        input {
+            display: block;
+            margin: 0.5em auto;
+            border: none;
+            padding: 0;
+            width: 13.5ch;
+            background: repeating-linear-gradient(90deg, dimgrey 0, dimgrey 1ch, transparent 0, transparent 1.5ch) 0 100%/13ch 2px no-repeat;
+            font: 5ch droid sans mono, consolas, monospace;
+            letter-spacing: 0.5ch;
+            color: dodgerblue;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        .go {
+            width: 200px;
+            padding: 20px;
+            background-color: rgb(21, 70, 119);
+            font: 5ch droid sans mono, consolas, monospace;
+            cursor: pointer;
+            color: cornsilk;
+            font-size: 1.7rem;
+            border-radius: 25px;
+            border: none;
+            transition: all 0.2s linear;
+        }
+
+        .go:hover {
+            background-color: dodgerblue;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 class="heading">Enter 9-digit Roll Number</h2>
+    <!-- <form method="GET" action="/"> -->
+    <input maxlength='9' value='' />
+    <button class="go" onclick="goAnimate()">Go</button>
+    <!-- </form> -->
+</body>
+<script>
+    let go = document.querySelector(".go");
+    function goAnimate() {
+        console.log("clicked");
+        // go.style.width="80px" ;
+    }
+</script>
+
+</html>
