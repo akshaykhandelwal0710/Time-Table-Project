@@ -7,46 +7,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans:wght@300;400&display=swap');
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Lato';
         }
 
-        html {
-            background-color: #E4E9FD;
-            background-image: -webkit-linear-gradient(70deg, #98c7b1 50%, #E4E9FD 50%);
-            min-height: 100%;
-        }
 
         body {
-            font: 3ch droid sans mono, consolas, monospace;
+            /* font: 3ch droid sans mono, consolas, monospace; */
             text-align: center;
+            background: linear-gradient(326deg, rgba(16, 6, 35, 1) 0%, rgba(23, 17, 34, 1) 100%);
+            color: #fff;
+        }
+        .top{
+            align-items: center;
+            padding:auto;
+            width:100vw;
         }
 
         .heading {
             margin: 2em auto;
-            color: #0F044C;
+            color: #ffffff;
+            font-size: 2rem;
             display: block;
             text-align: center;
         }
 
         input {
             display: block;
-            margin: 0.5em auto;
+            margin:1.5rem auto;
             border: none;
-            padding: 0;
-            width: 13.5ch;
-            background: repeating-linear-gradient(90deg, dimgrey 0, dimgrey 1ch, transparent 0, transparent 1.5ch) 0 100%/13ch 2px no-repeat;
-            font: 4ch droid sans mono, consolas, monospace;
+            padding: 20px auto;
+            text-align: center;
+            height:70px;
+            font-size: 2rem;
+            background-color: rgb(255,255,255,0);
+            border:2px solid rgb(255,255,255,0.3);
+            /* width: 13.5ch; */
+            /* background: repeating-linear-gradient(90deg, dimgrey 0, dimgrey 1ch, transparent 0, transparent 1.5ch) 0 100%/13ch 2px no-repeat;
+            font: 10ch droid sans mono, consolas, monospace; */
             letter-spacing: 0.5ch;
-            color: dodgerblue;
+            color: #fff;
+            
         }
-
         input:focus {
             outline: none;
         }
-
+        
+        
+        
         .go {
             width: 20vw;
             padding: 15px;
@@ -59,28 +71,33 @@
             border: none;
             transition: all 0.2s linear;
         }
-
+        
         .go:hover {
             background-color: dodgerblue;
         }
         .container{
             width:90vw;
-            margin:auto;
+            margin:50px auto;
             text-align: center;
-            margin-top: 30px;
-            background-color: rgb(255,255,255,0.5);
+            margin-top: 100px;
+            background-color: rgb(255,255,255,0.1);
             padding:20px;
             font-size: 1rem;
             font-family: 'lato', 'Arial';
+            backdrop-filter: blur(15px);
+            transform: rotate3d(1,0,0,90deg);
+            transition:all 0.5s;
+            overflow-x:auto;
         }
         table{
             padding: 20px;
             border:1px solid red;
+            background-color: transparent;
             width: 100%;
             border-collapse: collapse;
         }
         td,th{
-            border:1px solid black;
+            border:1px solid rgb(214, 197, 197,0.2);
             padding:20px 5px;
         }
         td{
@@ -89,23 +106,50 @@
         .lab{
             width:33%;
         }
+        .circle1 {
+            height: 500px;
+        width: 500px;
+        border-radius: 50%;
+        background: #C02425;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to left, #F0CB35, #C02425);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to left, #F0CB35, #C02425);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 
+        position: fixed;
+        top: 150px;
+        right: -50px;
+        z-index: -1;
+        }
+        
+        
+        @media screen and (max-width:720px) {
+            *{
+              font-size: 0.8rem;
+            }
+
+
+        }   
 
 
     </style>
 </head>
 
 <body>
+    <div class="circle1"></div>
+    <div class="top">
     <h2 class="heading">Enter 9-digit Roll Number</h2>
     <!-- <form method="GET" action="/"> -->
     <input maxlength='9' id='rollNo'/>
-    <button class="go" onclick="go()">Go</button>
+    <!-- <button class="go" onclick="go()">Go</button> -->
     <!-- </form> -->
+    </div>
 
 
     <div class="container">
-        <table noshade>
+        <table id="table">
             <tr class="header-row">
                 <th>Time</th>
                 <th> 08:00 - 09:00 </th>
@@ -119,49 +163,49 @@
             </tr>
             <tr id="mon" class="day">
                 <td>Monday</td>
-                <td class='timeSlot' id = "montut"> fgh</td>
-                <td class='timeSlot' id = "monfirst"> fgh</td>
-                <td class='timeSlot' id = "monsecond"> fgh</td>
-                <td class='timeSlot' id = "monthird"> fgh</td>
-                <td class='timeSlot' id = "monforth"> fgh</td>
+                <td class='timeSlot' id = "montut"> </td>
+                <td class='timeSlot' id = "monfirst"> </td>
+                <td class='timeSlot' id = "monsecond"> </td>
+                <td class='timeSlot' id = "monthird"> </td>
+                <td class='timeSlot' id = "monforth"> </td>
                 <td class="break" rowspan="5"></td>
-                <td class='timeSlot lab' id = "monlab"> fgh</td>
+                <td class='timeSlot lab' id = "monlab"> </td>
             </tr>
             <tr id="tue" class="day">
                 <td>Tuesday</td>
-                <td class='timeSlot' id = "tuetut"> fgh</td>
-                <td class='timeSlot' id = "tuefirst"> fgh</td>
-                <td class='timeSlot' id = "tuesecond"> fgh</td>
-                <td class='timeSlot' id = "tuethird"> fgh</td>
-                <td class='timeSlot' id = "tueforth"> fgh</td>
-                <td class='timeSlot lab' id = "tuelab"> fgh</td>
+                <td class='timeSlot' id = "tuetut"> </td>
+                <td class='timeSlot' id = "tuefirst"> </td>
+                <td class='timeSlot' id = "tuesecond"> </td>
+                <td class='timeSlot' id = "tuethird"> </td>
+                <td class='timeSlot' id = "tueforth"> </td>
+                <td class='timeSlot lab' id = "tuelab"> </td>
             </tr>
             <tr id="wed" class="day">
                 <td>Wednesday</td>
-                <td class='timeSlot' id = "wedtut"> fgh</td>
-                <td class='timeSlot' id = "wedfirst"> fgh</td>
-                <td class='timeSlot' id = "wedsecond"> fgh</td>
-                <td class='timeSlot' id = "wedthird"> fgh</td>
-                <td class='timeSlot' id = "wedforth"> fgh</td>
-                <td class='timeSlot lab' id = "wedlab"> fgh</td>
+                <td class='timeSlot' id = "wedtut"> </td>
+                <td class='timeSlot' id = "wedfirst"> </td>
+                <td class='timeSlot' id = "wedsecond"> </td>
+                <td class='timeSlot' id = "wedthird"> </td>
+                <td class='timeSlot' id = "wedforth"> </td>
+                <td class='timeSlot lab' id = "wedlab"> </td>
             </tr>
             <tr id="thu" class="day">
                 <td>Thursday</td>
-                <td class='timeSlot' id = "thutut"> fgh</td>
-                <td class='timeSlot' id = "thufirst"> fgh</td>
-                <td class='timeSlot' id = "thusecond"> fgh</td>
-                <td class='timeSlot' id = "thuthird"> fgh</td>
-                <td class='timeSlot' id = "thuforth"> fgh</td>
-                <td class='timeSlot lab' id = "thulab"> fgh</td>
+                <td class='timeSlot' id = "thutut"> </td>
+                <td class='timeSlot' id = "thufirst"> </td>
+                <td class='timeSlot' id = "thusecond"> </td>
+                <td class='timeSlot' id = "thuthird"> </td>
+                <td class='timeSlot' id = "thuforth"> </td>
+                <td class='timeSlot lab' id = "thulab"> </td>
             </tr>
             <tr id="fri" class="day">
                 <td>Friday</td>
-                <td class='timeSlot' id = "fritut"> fgh</td>
-                <td class='timeSlot' id = "frifirst"> fgh</td>
-                <td class='timeSlot' id = "frisecond"> fgh</td>
-                <td class='timeSlot' id = "frithird"> fgh</td>
-                <td class='timeSlot' id = "friforth"> fgh</td>
-                <td class='timeSlot lab' id = "frilab"> fgh</td>
+                <td class='timeSlot' id = "fritut"> </td>
+                <td class='timeSlot' id = "frifirst"> </td>
+                <td class='timeSlot' id = "frisecond"> </td>
+                <td class='timeSlot' id = "frithird"> </td>
+                <td class='timeSlot' id = "friforth"> </td>
+                <td class='timeSlot lab' id = "frilab"> </td>
             </tr>
 
         </table>
@@ -169,13 +213,24 @@
 </body>
 <script>
     let roll = document.getElementById('rollNo') ;
+    roll.addEventListener('keyup',(event)=>{
+        if(event.code=="Enter"){
+            go();
+        }
+    })
     function go() {
+        document.getElementById("table").scrollIntoView();
         const rollNo=roll.value ;
+        document.querySelector(".container").style.transform='rotate3d(1,0,0,0deg)'
 
         let branch = (rollNo%100000 - rollNo%1000)/1000;
         for (let i = 0; i < len1; i++){
             for (let j = 0; j < len2; j++){
-                document.getElementById(days[i] + tags[j]).innerHTML = get_branch[branch][days[i]][tags[j]];
+                var sub = get_branch[branch][days[i]][tags[j]] ;
+                if(sub===""){
+                    sub="<img height='100' src='https://i.gifer.com/IXNp.gif'>" ;
+                }
+                document.getElementById(days[i] + tags[j]).innerHTML = sub;
             }
         }
     }
@@ -196,7 +251,7 @@
             lab:  'No Labs' , 
         },
         tue:{
-            tut:   ' ' ,
+            tut:   '' ,
             first:  'MA201' ,
             second: 'EE204' ,
             third:  'EE203' ,
@@ -214,7 +269,7 @@
             lab:  'No Labs' ,            
         },
         thu:{
-            tut:   ' ' ,
+            tut:   '' ,
             first:  'EE220' ,
             second: 'EE204' ,
             third:  '' ,
@@ -282,6 +337,7 @@
 
     const get_branch={
         8:eee,
+        2:ece,
     }
 
 
